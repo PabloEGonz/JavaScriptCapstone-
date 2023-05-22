@@ -1,3 +1,79 @@
-h1 {
-  color: red;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600&family=Ubuntu:ital,wght@0,400;0,700;1,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto+Slab', sans-serif;
+  line-height: 1em;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: var(--clr-text);
+  background-color: var(--clr-bg);
+}
+
+:root {
+  --clr-text: hsl(0, 0%, 100%);
+  --clr-bg: hsl(0, 0%, 0%);
+}
+
+.hide {
+  display: none;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.grid {
+  display: grid;
+}
+
+.flex {
+  display: flex;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*  header */
+
+.header {
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 5%;
+  gap: 2em;
+}
+
+.navbar {
+  justify-content: space-between;
+  align-items: center;
+  gap: 2em;
+}
+
+.navbar li {
+  cursor: pointer;
+}
+
+.logo {
+  width: 80px;
+}
+
+
+/* section */
+
+.landing-page {
+  padding: 15% 10%;
+}
+
+/* footer */
+
+.footer {
+  padding: 5%;
+  border-top: 2px solid var(--clr-text);
 }
