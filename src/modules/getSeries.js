@@ -6,6 +6,7 @@ const getSeries = async (file) => {
   return `<img class="card-img" src='${response.image.medium}'>
     <div class='flex card-heading'><h4 class="card-title">${response.name}</h4>
     <img class="card-icon" src='${heart}'></div>
+    <p class="likes">Likes</p>
     <button class="pop-up" type="button">Comments</button>
     <button class="reserve" type="button">Reservations</button>`;
 };
