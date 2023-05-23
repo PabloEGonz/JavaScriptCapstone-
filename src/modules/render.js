@@ -12,9 +12,11 @@ const render = async () => {
         <div class='flex card-heading'><h4 class="card-title">${ele.name}</h4>
         <img class="card-icon" src='${heart}'></div>
         <p class="likes">Likes</p>
-        <button class="pop-up" id="${ele.id}" type="button">Comments</button>
+        <button class="popUp-bttn" id="${ele.id}" type="button">Comments</button>
         <button class="reserve" type="button">Reservations</button>`;
     container.appendChild(card);
+    
   });
 };
+
 export default render;
