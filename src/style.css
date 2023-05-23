@@ -14,7 +14,7 @@
 
 :root {
   --clr-text: hsl(0, 0%, 100%);
-  --clr-bg: hsl(0, 0%, 0%);
+  --clr-bg: hsl(0, 0%, 20%);
 }
 
 .hide {
@@ -74,25 +74,32 @@ a {
 
 .card {
   width: 200px;
-  padding: 0;
-  margin: 0;
+  margin: 5%;
   display: flex;
   flex-direction: column;
+  padding: 3%;
+  background-color: #000000;
+  border-radius: 10px;
+  box-shadow: 5px 5px 40px 30px #13121233;
 }
 
 .card-img {
   width: 100%;
+  border-radius: 5px;
 }
 
 .card-heading {
   align-items: center;
   justify-content: space-between;
   margin: 15% 0;
+  background-color: inherit;
 }
+
 .card-title {
   font-size: 1rem;
   font-weight: 750;
   width: 80%;
+  background-color: inherit;
 }
 
 .card-icon {
