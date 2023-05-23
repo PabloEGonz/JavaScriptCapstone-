@@ -11,15 +11,76 @@
 }
 
 .popUp-section {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  justify-items: center;
+  gap: 0.7em;
+  width: 80%;
+  padding: 3%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.box2,
+.box3,
+.box4 {
+  width: 90%;
+}
+
+.box1 {
+  height: auto;
 }
 
 .xBttn {
-  width: 50px;
+  position: absolute;
+  width: 30px;
+  margin-left: 22vw;
 }
 
-.serieImg {
-  width: 200px;
+.box2 {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
+.box2 h2 {
+  font-weight: 600;
+  font-size: 1.5em;
+}
+
+.box2 p,
+i,
+b {
+  font-size: 0.7rem;
+}
+
+.serieData {
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6em;
+  justify-self: center;
+}
+
+.box3 h3 {
+  text-align: center;
+}
+
+.box4 h4 {
+  text-align: center;
+}
+
+.newComment {
+  margin-top: 1em;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.newComment input {
+  width: 15em;
+}
+
+.addCommentBttn {
+  align-self: flex-start;
+  font-size: 1rem;
+  padding: 0.5em 1em;
+  border: solid 1px gray;
+  background-color: var(--clr-bg);
 }
