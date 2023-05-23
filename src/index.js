@@ -1,4 +1,5 @@
 import './style.css';
+import './popUp.css';
 import logo from './img/LogoMN.png';
 import popUp_render from './popUp.js';
 
