@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600&family=Ubuntu:ital,wght@0,400;0,700;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600&family=Ubuntu:ital,wght@0,400;0,700;1,700&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto+Slab', sans-serif;
+  font-family: "Roboto+Slab", sans-serif;
   line-height: 1em;
   font-weight: 400;
   font-size: 1.2rem;
@@ -14,7 +14,7 @@
 
 :root {
   --clr-text: hsl(0, 0%, 100%);
-  --clr-bg: hsl(0, 0%, 0%);
+  --clr-bg: hsl(0, 0%, 20%);
 }
 
 .hide {
@@ -67,7 +67,66 @@ a {
 /* section */
 
 .landing-page {
-  padding: 15% 10%;
+  padding: 2% 10%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.card {
+  width: 260px;
+  margin: 5%;
+  display: flex;
+  flex-direction: column;
+  padding: 3%;
+  background-color: #000;
+  border-radius: 10px;
+  box-shadow: 5px 5px 40px 30px #13121233;
+}
+
+.card > * {
+  background-color: inherit;
+}
+
+.card-img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.card-heading {
+  align-items: center;
+  justify-content: space-between;
+  margin: 15% 0 1% 0;
+}
+
+.card-heading > * {
+  background-color: inherit;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 750;
+  width: 80%;
+}
+
+.card-icon {
+  width: 15px;
+  height: 15px;
+  margin-right: 3%;
+}
+
+.likes {
+  font-size: 0.7rem;
+  align-self: end;
+  margin-bottom: 15%;
+}
+
+.pop-up,
+.reserve {
+  font-size: 0.8rem;
+  margin: 3% auto;
+  padding: 3% 10%;
+  border: solid 1px gray;
+  background-color: var(--clr-bg);
 }
 
 /* footer */
