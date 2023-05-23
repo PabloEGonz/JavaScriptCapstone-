@@ -67,7 +67,7 @@ a {
 /* section */
 
 .landing-page {
-  padding: 15% 10%;
+  padding: 2% 10%;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
 }
@@ -110,9 +110,9 @@ a {
 
 .pop-up,
 .reserve {
-  font-size: 1rem;
+  font-size: 0.8rem;
   margin: 3% auto;
-  padding: 3% 4%;
+  padding: 3% 10%;
   border: solid 1px gray;
 }
 
