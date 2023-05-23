@@ -76,3 +76,10 @@ a {
   padding: 5%;
   border-top: 2px solid var(--clr-text);
 }
+
+/* popUp */
+
+.xBttn {
+width: 50px;
+}
+
