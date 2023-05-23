@@ -1,8 +1,19 @@
 import heart from '../img/likes.png';
 import { arrayObj } from './getSeries.js';
-import seeComments from '../index.js';
+import popUpRender from './popUp.js';
+// import seeComments from '../index.js';
 
 const container = document.querySelector('.landing-page');
+
+const seeComments = () => {
+  const buttons = Array.from(document.getElementsByClassName('popUp-bttn'));
+
+  buttons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      popUpRender(index);
+    });
+  });
+};
 
 const render = async () => {
   container.innerHTML = '';
