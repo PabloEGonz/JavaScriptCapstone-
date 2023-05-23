@@ -1,14 +1,14 @@
 import closePopUp from '../img/x.png';
 import { arrayObj } from './getSeries.js';
 
-const pageBody = document.getElementById('body'); 
+const pageBody = document.getElementById('body');
 
 const popUp_render = (index) => {
   const elem = arrayObj[index]
-  
-    const card = document.createElement('div');
-    card.className = 'popUp-card flex';
-    card.innerHTML = `
+
+  const card = document.createElement('div');
+  card.className = 'popUp-card flex';
+  card.innerHTML = `
     <section class="popUp-section flex">
         <div class="box1">
           <img src="${elem.image.original}" alt="Serie image nro.1" class="serieImg">
@@ -38,7 +38,11 @@ const popUp_render = (index) => {
         </div>
     </section>
     `;
-    pageBody.appendChild(card);
+  pageBody.appendChild(card);
+  const close = document.querySelector('.xBttn');
+  close.addEventListener('click',() =>{
+    pageBody.removeChild(card);
+  })
 };
 
 export default popUp_render;
