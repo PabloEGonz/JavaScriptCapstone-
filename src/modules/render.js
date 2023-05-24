@@ -1,7 +1,17 @@
 import heart from '../img/likes.png';
 import { arrayObj } from './getSeries.js';
+import popUpRender from './popUp.js';
 
 const container = document.querySelector('.landing-page');
+
+const seeComments = () => {
+  const buttons = Array.from(document.getElementsByClassName('popUp-bttn'));
+  buttons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      popUpRender(index);
+    });
+  });
+};
 
 const render = async () => {
   container.innerHTML = '';
@@ -15,8 +25,8 @@ const render = async () => {
         <button class="popUp-bttn" id="${ele.id}" type="button">Comments</button>
         <button class="reserve" type="button">Reservations</button>`;
     container.appendChild(card);
-    
   });
+  seeComments();
 };
 
 export default render;
