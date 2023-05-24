@@ -1,5 +1,6 @@
 import closePopUp from '../img/x.png';
 import { arrayObj } from './getSeries.js';
+import newCommentForm from './addcoments.js';
 
 const pageBody = document.getElementById('body');
 
@@ -25,24 +26,27 @@ const popUpRender = (index) => {
           <p class="SerieResume">${elem.summary}</p>
         </div>
         <div class="box3">
-          <h3 class="commentTitle">Comments</h3>
+          <h3 class="commentTitle">Comments ()</h3>
           <div class="viewComments"></div>
         </div>
         <div class="box4">
           <h4 class="commentSubtitle">Add a comment</h4>
-          <form action="" class="newComment flex">
-            <input type="text" name="name" placeholder="Your name" required>
-            <input type="text" name="addcomment" placeholder="Your insights" required>
+          <form class="newCommentForm flex">
+            <input type="text" name="name" id="Name" placeholder="Your name" required>
+            <input type="text" name="addcomment" id="Comment" placeholder="Your insights" required>
             <button type="submit" class="addCommentBttn">Comment</button>
           </form>
         </div>
     </section>
     `;
   pageBody.appendChild(card);
+
   const close = document.querySelector('.xBttn');
   close.addEventListener('click', () => {
     pageBody.removeChild(card);
   });
+
+  newCommentForm();
 };
 
 export default popUpRender;
