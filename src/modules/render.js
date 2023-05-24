@@ -3,8 +3,10 @@ import { arrayObj } from './getSeries.js';
 import popUpRender from './popUp.js';
 import { getArrayItems, getLikes } from './involAPI.js';
 import { likes } from './updateLikes.js';
+import itemCounter from './itemsCounter.js';
 
 const container = document.querySelector('.landing-page');
+const home = document.querySelector('#home-link');
 
 const seeComments = () => {
   const buttons = Array.from(document.getElementsByClassName('popUp-bttn'));
@@ -18,6 +20,7 @@ const seeComments = () => {
 const render = async () => {
   await getLikes();
   const items = getArrayItems();
+  home.innerHTML = `Home (${itemCounter(items)})`
   container.innerHTML = '';
   arrayObj.forEach((ele, i) => {
     const card = document.createElement('div');
