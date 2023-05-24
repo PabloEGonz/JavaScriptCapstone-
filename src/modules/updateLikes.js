@@ -1,4 +1,3 @@
-// import render from './render.js';
 import { getLikes, getArrayItems } from './involAPI.js';
 
 const itemIds = ['GOT', 'HOTD', 'EUPH', 'T100', 'ST', 'BM'];
