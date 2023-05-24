@@ -1,22 +1,24 @@
 const APIURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/uVDPVhxCZlYlibEV1MxD/comments/';
-// API INVOLMENT
-let arrayComment = [];
-const popupIds = ['GOT', 'HOTD', 'EUPH', 'T100', 'ST', 'BM'];
 
 const getComments = async (i) => {
-  const obj = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/uVDPVhxCZlYlibEV1MxD/comments?item_id=${popupIds[i]}`);
+  const comentContainer = document.querySelector('.viewComments');
+  const obj = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/uVDPVhxCZlYlibEV1MxD/comments?item_id=item${i}`);
   const response = await obj.json();
-  arrayComment = response;
+  comentContainer.innerHTML = '';
+  response.forEach((element) => {
+    const commentList = document.createElement('p');
+    commentList.className = 'newCreateComment';
+    commentList.innerHTML = ` ${element.creation_date} ${element.username}: ${element.comment}`;
+    comentContainer.appendChild(commentList);
+  });
+
 };
-const getArrayComments = () => arrayComment;
 
-//  POST and fecth for comments
-
-const POSTComment = async (id) => {
+const POSTComment = async (id, user, comments) => {
   const commentObj = {
-      item_id: `${popupIds[id]}`,
-      username: `${user}`,
-      comment: `${comment}`,
+      item_id: `item${id}`,
+      username: user,
+      comment: comments,
   };
   await fetch(APIURL, 
     {
@@ -26,63 +28,19 @@ const POSTComment = async (id) => {
     },
     body: JSON.stringify(commentObj),
   });
+  await getComments(id);
 };
 
-newCommentForm = () => {
-  const formBox = document.querySelector('.newCommentForm');
-  const nameInput = document.getElementById('Name');
-  const commentInput = document.getElementById('Comment');
-  const submitBttn = document.querySelector('.addCommentBttn');
+const newCommentForm = (itemIndex, nameInput, commentInput, submitBttn) => {
       submitBttn.addEventListener('click', async (e) => {
           e.preventDefault();
-  
-          await POSTComment(window.popupElementd, nameInput.value, commentInput.value);
-          const newComments = await fetchComments(window.popupElementd);
-          formBox.innerHTML = newComments;
+          await POSTComment( itemIndex, nameInput.value, commentInput.value);
           nameInput.value = '';
           commentInput.value = '';
     });
   };
 
-
-
-
-
-// const POSTComment = async (commentId, user, comment) => {
-//     const commentObj = {
-//       item_id: `${commentId}`,
-//       username: `${user}`,
-//       comment: `${comment}`,
-//     };
-//     await fetch(APIURL, {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//       body: JSON.stringify(commentObj),
-//     });
-//   };
-
-
-// const fetchComments = async (commentId) => {
-//     const response = await fetch(
-//       `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/uVDPVhxCZlYlibEV1MxD/comments?item_id=${commentId}`,
-//     );
-//     const jsonData = await response.json();
-//     let comments = '';
-//     if (response.status === 400) {
-//       comments = 'no comments yet.';
-//     } else {
-//       jsonData.forEach((comment) => {
-//         comments += `<p>${comment.creation_date} ${comment.username}: ${comment.comment}</p>`;
-//       });
-//     }
-//     console.log(comments);
-//     return comments;
-//   };
-
-
-//   export { POSTComment, fetchComments };
+  export { newCommentForm, getComments };
 
 
   

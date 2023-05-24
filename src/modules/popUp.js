@@ -1,13 +1,10 @@
 import closePopUp from '../img/x.png';
 import { arrayObj } from './getSeries.js';
-// import newCommentForm from './addcoments.js';
-//import function 
+import { newCommentForm, getComments } from './comments.js';
 
 const pageBody = document.getElementById('body');
 
 const popUpRender = async (index) => {
-  await getComments(index);
-  const commts = functon();
   const elem = arrayObj[index];
 
   const card = document.createElement('div');
@@ -49,7 +46,13 @@ const popUpRender = async (index) => {
     pageBody.removeChild(card);
   });
 
-  // newCommentForm();
+  const nameInput = document.getElementById('Name');
+  const commentInput = document.getElementById('Comment');
+  const submitBttn = document.querySelector('.addCommentBttn');
+  const itemIndex = index;
+
+  newCommentForm(itemIndex, nameInput, commentInput, submitBttn);
+  await getComments(index);
 };
 
 export default popUpRender;
