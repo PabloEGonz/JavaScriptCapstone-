@@ -2,8 +2,7 @@ import heart from '../img/likes.png';
 import { arrayObj } from './getSeries.js';
 import popUpRender from './popUp.js';
 import { getArrayItems, getLikes } from './involAPI.js';
-import { likes, updateLikes } from './updateLikes.js';
-
+import { likes } from './updateLikes.js';
 
 const container = document.querySelector('.landing-page');
 
