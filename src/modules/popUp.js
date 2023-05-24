@@ -1,6 +1,6 @@
 import closePopUp from '../img/x.png';
 import { arrayObj } from './getSeries.js';
-import newCommentForm from './addcoments.js';
+// import newCommentForm from './addcoments.js';
 
 const pageBody = document.getElementById('body');
 
@@ -46,7 +46,7 @@ const popUpRender = (index) => {
     pageBody.removeChild(card);
   });
 
-  newCommentForm();
+  // newCommentForm();
 };
 
 export default popUpRender;
