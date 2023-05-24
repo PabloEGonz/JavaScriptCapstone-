@@ -1,10 +1,13 @@
 import closePopUp from '../img/x.png';
 import { arrayObj } from './getSeries.js';
 // import newCommentForm from './addcoments.js';
+//import function 
 
 const pageBody = document.getElementById('body');
 
-const popUpRender = (index) => {
+const popUpRender = async (index) => {
+  await getComments(index);
+  const commts = functon();
   const elem = arrayObj[index];
 
   const card = document.createElement('div');

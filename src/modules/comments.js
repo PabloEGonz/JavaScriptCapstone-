@@ -1,9 +1,10 @@
 const APIURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/uVDPVhxCZlYlibEV1MxD/comments/';
 // API INVOLMENT
 let arrayComment = [];
+const popupIds = ['GOT', 'HOTD', 'EUPH', 'T100', 'ST', 'BM'];
 
-const getComments = async () => {
-  const obj = await fetch(APIURL);
+const getComments = async (i) => {
+  const obj = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/uVDPVhxCZlYlibEV1MxD/comments?item_id=${popupIds[i]}`);
   const response = await obj.json();
   arrayComment = response;
 };
@@ -11,10 +12,9 @@ const getArrayComments = () => arrayComment;
 
 //  POST and fecth for comments
 
-const popupIds = ['GOT', 'HOTD', 'EUPH', 'T100', 'ST', 'BM'];
 const POSTComment = async (id) => {
   const commentObj = {
-      item_id: `${commentId[id]}`,
+      item_id: `${popupIds[id]}`,
       username: `${user}`,
       comment: `${comment}`,
   };
