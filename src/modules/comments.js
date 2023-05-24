@@ -1,3 +1,5 @@
+import commentCounter from './commentsCounter.js';
+
 const APIURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/uVDPVhxCZlYlibEV1MxD/comments/';
 
 const getComments = async (i) => {
@@ -11,7 +13,6 @@ const getComments = async (i) => {
     commentList.innerHTML = ` ${element.creation_date} ${element.username}: ${element.comment}`;
     comentContainer.appendChild(commentList);
   });
-
 };
 
 const POSTComment = async (id, user, comments) => {
@@ -29,6 +30,7 @@ const POSTComment = async (id, user, comments) => {
     body: JSON.stringify(commentObj),
   });
   await getComments(id);
+  commentCounter();
 };
 
 const newCommentForm = (itemIndex, nameInput, commentInput, submitBttn) => {

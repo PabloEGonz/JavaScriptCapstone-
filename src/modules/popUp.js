@@ -1,11 +1,13 @@
 import closePopUp from '../img/x.png';
 import { arrayObj } from './getSeries.js';
 import { newCommentForm, getComments } from './comments.js';
+import commentCounter from './commentsCounter.js';
 
 const pageBody = document.getElementById('body');
 
 const popUpRender = async (index) => {
   const elem = arrayObj[index];
+  const counter = await commentCounter(index);
 
   const card = document.createElement('div');
   card.className = 'popUp-card flex';
@@ -26,7 +28,7 @@ const popUpRender = async (index) => {
           <p class="SerieResume">${elem.summary}</p>
         </div>
         <div class="box3">
-          <h3 class="commentTitle">Comments ()</h3>
+          <h3 class="commentTitle">Comments (${counter})</h3>
           <div class="viewComments"></div>
         </div>
         <div class="box4">
