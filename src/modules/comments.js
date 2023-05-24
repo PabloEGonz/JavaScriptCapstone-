@@ -17,33 +17,29 @@ const getComments = async (i) => {
 
 const POSTComment = async (id, user, comments) => {
   const commentObj = {
-      item_id: `item${id}`,
-      username: user,
-      comment: comments,
+    item_id: `item${id}`,
+    username: user,
+    comment: comments,
   };
-  await fetch(APIURL, 
+  await fetch(APIURL,
     {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(commentObj),
-  });
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(commentObj),
+    });
   await getComments(id);
   commentCounter();
 };
 
 const newCommentForm = (itemIndex, nameInput, commentInput, submitBttn) => {
-      submitBttn.addEventListener('click', async (e) => {
-          e.preventDefault();
-          await POSTComment( itemIndex, nameInput.value, commentInput.value);
-          nameInput.value = '';
-          commentInput.value = '';
-    });
-  };
+  submitBttn.addEventListener('click', async (e) => {
+    e.preventDefault();
+    await POSTComment(itemIndex, nameInput.value, commentInput.value);
+    nameInput.value = '';
+    commentInput.value = '';
+  });
+};
 
-  export { newCommentForm, getComments };
-
-
-  
-
+export { newCommentForm, getComments };
