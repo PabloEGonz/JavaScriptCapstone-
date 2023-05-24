@@ -20,7 +20,7 @@ const seeComments = () => {
 const render = async () => {
   await getLikes();
   const items = getArrayItems();
-  home.innerHTML = `Home (${itemCounter(items)})`
+  home.innerHTML = `Home (${itemCounter(items)})`;
   container.innerHTML = '';
   arrayObj.forEach((ele, i) => {
     const card = document.createElement('div');

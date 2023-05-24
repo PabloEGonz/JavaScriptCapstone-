@@ -1,4 +1,2 @@
-const itemCounter = (array) => {
-    return array.length;
-}
+const itemCounter = (array) => array.length;
 export default itemCounter;
