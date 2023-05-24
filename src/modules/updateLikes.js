@@ -1,4 +1,5 @@
 // import render from './render.js';
+import { getLikes, getArrayItems } from './involAPI.js';
 
 const itemIds = ['GOT', 'HOTD', 'EUPH', 'T100', 'ST', 'BM'];
 const updateLikes = async (id) => {
@@ -12,13 +13,16 @@ const updateLikes = async (id) => {
     },
     body: JSON.stringify(obj),
   });
-  //   render();
 };
 const likes = () => {
   const buttons = Array.from(document.getElementsByClassName('card-icon'));
   buttons.forEach((button, i) => {
-    button.addEventListener('click', () => {
-      updateLikes(i);
+    button.addEventListener('click', async () => {
+      await updateLikes(i);
+      await getLikes();
+      const items = getArrayItems();
+      const likesP = Array.from(document.getElementsByClassName('likes'));
+      likesP[i].innerHTML = `${items[i].likes} Likes`;
     });
   });
 };
