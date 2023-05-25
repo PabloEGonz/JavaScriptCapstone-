@@ -1,4 +1,4 @@
-import heart from '../img/likes.png';
+import heart from '../img/star.png';
 import { arrayObj } from './getSeries.js';
 import popUpRender from './popUp.js';
 import { getArrayItems, getLikes } from './involAPI.js';
