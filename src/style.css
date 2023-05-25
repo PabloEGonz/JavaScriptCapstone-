@@ -14,7 +14,7 @@
 
 :root {
   --clr-text: hsl(0, 0%, 100%);
-  --clr-bg: hsl(0, 0%, 20%);
+  --clr-bg: hsl(0, 0%, 31%);
 }
 
 .hide {
@@ -44,32 +44,44 @@ a {
 /*  header */
 
 .header {
-  justify-content: space-evenly;
+  position: fixed;
+  top: 0px;
+  left: 0;
+  justify-content: space-between;
   align-items: center;
-  padding: 5%;
-  gap: 2em;
+  padding: 1% 2%;
+  background-color: #000;
+  width: 100%;
 }
 
 .navbar {
+  background-color: inherit;
   justify-content: space-between;
   align-items: center;
-  gap: 2em;
+  gap: 3em;
+  margin: 0 10%;
 }
 
 .navbar li {
+  font-size: 1.2rem;
+  font-weight: 600;
+  background-color: inherit;
   cursor: pointer;
 }
 
 .logo {
+  margin: 0 5%;
   width: 80px;
 }
 
 /* section */
 
 .landing-page {
-  padding: 2% 10%;
+  margin-top: 10%;
+  padding: 2% auto;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
+  justify-content: center;
 }
 
 .card {
@@ -77,10 +89,11 @@ a {
   margin: 5%;
   display: flex;
   flex-direction: column;
-  padding: 3%;
+  padding: 2%;
   background-color: #000;
   border-radius: 10px;
-  box-shadow: 5px 5px 40px 30px #13121233;
+  box-shadow: 0 5px 30px 5px #222222;
+  place-self: center;
 }
 
 .card > * {
