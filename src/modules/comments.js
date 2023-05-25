@@ -1,18 +1,22 @@
 import commentCounter from './commentsCounter.js';
 
-const APIURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/uVDPVhxCZlYlibEV1MxD/comments/';
+const APIURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/YNGIAvmuzfqw2IIpg60K/comments/';
 
 const getComments = async (i) => {
   const comentContainer = document.querySelector('.viewComments');
-  const obj = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/uVDPVhxCZlYlibEV1MxD/comments?item_id=item${i}`);
+  const obj = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/YNGIAvmuzfqw2IIpg60K/comments?item_id=item${i}`);
   const response = await obj.json();
   comentContainer.innerHTML = '';
-  response.forEach((element) => {
-    const commentList = document.createElement('p');
-    commentList.className = 'newCreateComment';
-    commentList.innerHTML = ` ${element.creation_date} ${element.username}: ${element.comment}`;
-    comentContainer.appendChild(commentList);
-  });
+  if(Array.isArray(response)){
+    response.forEach((element) => {
+      const commentList = document.createElement('p');
+      commentList.className = 'newCreateComment';
+      commentList.innerHTML = ` ${element.creation_date} ${element.username}: ${element.comment}`;
+      comentContainer.appendChild(commentList);
+    });
+  } else {
+    comentContainer.textContent = "No comments yet";
+  }
 };
 
 const POSTComment = async (id, user, comments) => {
