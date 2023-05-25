@@ -39,7 +39,7 @@ Will have future changes in the next days!
 # 📖 Page with your favorite Shows and movies!  <a name="about-project"></a>
 
 A page featuring a selection of movies and series that have been hugely popular! Don't miss out on watching them.
-
+Here you can see a brief explaination of the project from us !  [click here](https://drive.google.com/file/d/1BD4JLBbzHmQ1m4hQqlDr33Gt5MYLm0n-/view)
 ## 🛠 Built With <a name="built-with"></a>
 
 - HTML
