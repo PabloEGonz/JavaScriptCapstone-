@@ -9,7 +9,7 @@
   z-index: 2;
   background-repeat: no-repeat;
   background-size: cover;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(18px);
 }
 .popUp-card::before {
   content: "";
