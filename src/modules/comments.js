@@ -7,7 +7,7 @@ const getComments = async (i) => {
   const obj = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/YNGIAvmuzfqw2IIpg60K/comments?item_id=item${i}`);
   const response = await obj.json();
   comentContainer.innerHTML = '';
-  if(Array.isArray(response)){
+  if (Array.isArray(response)) {
     response.forEach((element) => {
       const commentList = document.createElement('p');
       commentList.className = 'newCreateComment';
@@ -15,7 +15,7 @@ const getComments = async (i) => {
       comentContainer.appendChild(commentList);
     });
   } else {
-    comentContainer.textContent = "No comments yet";
+    comentContainer.textContent = 'No comments yet';
   }
 };
 
