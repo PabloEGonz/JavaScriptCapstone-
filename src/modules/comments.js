@@ -17,6 +17,9 @@ const getComments = async (i) => {
   } else {
     comentContainer.textContent = 'No comments yet';
   }
+  const counter = await commentCounter(i);
+  const countUpdate = document.querySelector('.commentTitle');
+  countUpdate.innerHTML = `Comments (${counter})`;
 };
 
 const POSTComment = async (id, user, comments) => {
@@ -40,9 +43,9 @@ const newCommentForm = (itemIndex, nameInput, commentInput, submitBttn) => {
   const empytField = document.getElementById('errorMsg');
   submitBttn.addEventListener('click', async (e) => {
     e.preventDefault();
-    if (nameInput.value === "" || commentInput.value === ""){
+    if (nameInput.value === '' || commentInput.value === '') {
       empytField.textContent = 'Please fill out all fields';
-      setTimeout (() => {
+      setTimeout(() => {
         empytField.textContent = '';
       }, 3000);
     } else {
@@ -50,7 +53,6 @@ const newCommentForm = (itemIndex, nameInput, commentInput, submitBttn) => {
       nameInput.value = '';
       commentInput.value = '';
     }
-
   });
 };
 
