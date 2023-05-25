@@ -15,7 +15,7 @@ const getComments = async (i) => {
       comentContainer.appendChild(commentList);
     });
   } else {
-    comentContainer.textContent = 'No comments yet';
+    comentContainer.textContent = 'No comments yet, be the first one to comment!';
   }
 };
 
