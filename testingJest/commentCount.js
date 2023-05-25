@@ -1,3 +1,5 @@
+const fetch = require('node-fetch');
+
 const commentCounter = async (id) => {
   try {
     const response = await fetch(
@@ -15,4 +17,4 @@ const commentCounter = async (id) => {
   }
 };
 
-export default commentCounter;
+module.exports = commentCounter;
