@@ -127,6 +127,11 @@ input:focus {
   background-color: var(--clr-bg);
 }
 
+#errorMsg {
+  font-size: 0.9rem;
+  color: rgb(255, 0, 0);
+}
+
 .addCommentBttn:hover {
   background-color: #f1c40f;
   color: black;
