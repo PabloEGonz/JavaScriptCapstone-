@@ -29,8 +29,7 @@ const render = async () => {
         <div class='flex card-heading'><h4 class="card-title">${ele.name}</h4>
         <img class="card-icon" src='${heart}'></div>
         <p class="likes">${items[i].likes} Likes</p>
-        <button class="popUp-bttn" id="${ele.id}" type="button">Comments</button>
-        <button class="reserve" type="button">Reservations</button>`;
+        <button class="popUp-bttn" id="${ele.id}" type="button">Comments</button>`;
     container.appendChild(card);
   });
   seeComments();
