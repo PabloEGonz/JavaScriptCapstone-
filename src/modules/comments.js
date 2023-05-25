@@ -34,15 +34,23 @@ const POSTComment = async (id, user, comments) => {
       body: JSON.stringify(commentObj),
     });
   await getComments(id);
-  commentCounter();
 };
 
 const newCommentForm = (itemIndex, nameInput, commentInput, submitBttn) => {
+  const empytField = document.getElementById('errorMsg');
   submitBttn.addEventListener('click', async (e) => {
     e.preventDefault();
-    await POSTComment(itemIndex, nameInput.value, commentInput.value);
-    nameInput.value = '';
-    commentInput.value = '';
+    if (nameInput.value === "" || commentInput.value === ""){
+      empytField.textContent = 'Please fill out all fields';
+      setTimeout (() => {
+        empytField.textContent = '';
+      }, 3000);
+    } else {
+      await POSTComment(itemIndex, nameInput.value, commentInput.value);
+      nameInput.value = '';
+      commentInput.value = '';
+    }
+
   });
 };
 

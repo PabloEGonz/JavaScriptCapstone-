@@ -84,3 +84,8 @@ b {
   border: solid 1px gray;
   background-color: var(--clr-bg);
 }
+
+#errorMsg {
+  font-size: 0.9rem;
+  color: rgb(255, 0, 0);
+}
