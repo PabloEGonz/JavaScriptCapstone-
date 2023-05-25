@@ -72,7 +72,7 @@ A page featuring a selection of movies and series that have been hugely popular!
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-You can see the website [here!](https://enmanuelbayen.github.io/Leaderboard-project/dist/)
+You can see the website [here!]()
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
