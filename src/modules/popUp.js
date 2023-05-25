@@ -8,14 +8,15 @@ const pageBody = document.getElementById('body');
 const popUpRender = async (index) => {
   const elem = arrayObj[index];
   const counter = await commentCounter(index);
-
+  document.body.classList.add('disable-scroll');
   const card = document.createElement('div');
+  card.style.backgroundImage = `url(${elem.image.medium})`;
   card.className = 'popUp-card flex';
   card.innerHTML = `
     <section class="popUp-section grid">
+    <img src="${closePopUp}" alt="X button" class="xBttn">
         <div class="box1">
           <img src="${elem.image.medium}" alt="Serie image nro.1" class="serieImg">
-          <img src="${closePopUp}" alt="X button" class="xBttn">
         </div>
         <div class="box2 flex">
           <h2 class="serieTitle">${elem.name}</h2>
@@ -46,6 +47,7 @@ const popUpRender = async (index) => {
 
   const close = document.querySelector('.xBttn');
   close.addEventListener('click', () => {
+    document.body.classList.remove('disable-scroll');
     pageBody.removeChild(card);
   });
 

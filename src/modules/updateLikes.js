@@ -17,8 +17,10 @@ const likes = () => {
   const buttons = Array.from(document.getElementsByClassName('card-icon'));
   buttons.forEach((button, i) => {
     button.addEventListener('click', async () => {
+      button.classList.add('liked');
       await updateLikes(i);
       await getLikes();
+      button.classList.remove('liked');
       const items = getArrayItems();
       const likesP = Array.from(document.getElementsByClassName('likes'));
       likesP[i].innerHTML = `${items[i].likes} Likes`;
