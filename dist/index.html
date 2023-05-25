@@ -6,22 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   <script defer src="runtime.bundle.js"></script><script defer src="index.bundle.js"></script></head>
-  <body>
+  <body id="body">
     <header class="header flex">
-      <img class="logo" src="" alt="Logo from Movie Now">
+      <a href="index.html"><img class="logo" alt="Logo from Movie Now" /></a>
       <ul class="navbar flex">
-        <li class="navbar-option"><a href="#" id="home-link">Home</a></li>
-        <li class="navbar-option"><a href="#" id="op1-link">op1</a></li>
-        <li class="navbar-option"><a href="#" id="op2-link">op2</a></li>
+        <li class="navbar-option active" id="home-link">Home</li>
+        <li class="navbar-option" id="op1-link">Movies</li>
+        <li class="navbar-option" id="op2-link">About</li>
       </ul>
     </header>
 
-    <section class="landing-page">
-      <h1>Movies and Series</h1>
-    </section>
+    <section class="landing-page grid"></section>
 
     <footer class="footer">
-      <p class="footer-text">Created by Microverse under CC license.</p>
+      <p class="footer-text">
+        The contents of this website are protected by copyright; all rights are
+        reserved by Movies Now ©.
+      </p>
     </footer>
   </body>
 </html>
