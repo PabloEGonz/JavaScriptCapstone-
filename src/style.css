@@ -17,11 +17,12 @@
 }
 
 body {
-  background-image: linear-gradient(
-    to bottom,
-    rgba(121, 121, 121, 0.716),
-    rgba(37, 37, 37, 0.97)
-  );
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(121, 121, 121, 0.716),
+      rgba(37, 37, 37, 0.97)
+    );
 }
 
 .disable-scroll {
@@ -56,7 +57,7 @@ a {
 
 .header {
   position: fixed;
-  top: 0px;
+  top: 0;
   left: 0;
   justify-content: space-between;
   align-items: center;
@@ -115,7 +116,7 @@ a {
   padding: 2%;
   background-color: #000;
   border-radius: 10px;
-  box-shadow: 0 5px 30px 5px #222222;
+  box-shadow: 0 5px 30px 5px #222;
   place-self: center;
 }
 
