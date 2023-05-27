@@ -17,15 +17,14 @@
 }
 
 body {
-  background-image:
-    linear-gradient(
-      to bottom,
-      rgba(121, 121, 121, 0.716),
-      rgba(37, 37, 37, 0.97)
-    );
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(121, 121, 121, 0.716),
+    rgba(37, 37, 37, 0.97)
+  );
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .disable-scroll {
@@ -70,7 +69,6 @@ a {
 }
 
 .navbar {
-  background-color: inherit;
   justify-content: space-between;
   align-items: center;
   gap: 3em;
@@ -80,7 +78,6 @@ a {
 .navbar li {
   font-size: 1.2rem;
   font-weight: 600;
-  background-color: inherit;
   cursor: pointer;
   font-family: "Ubuntu", sans-serif;
   padding-bottom: 1%;
@@ -176,11 +173,66 @@ a {
 }
 
 .footer {
-  margin-top: auto !important;
+  margin-top: auto;
   padding: 4% 11%;
   background-color: #000;
 }
 
 .footer-text {
   font-size: 0.9rem;
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    padding: 1% 2%;
+  }
+
+  .logo {
+    margin: 1% 2%;
+    width: 70px;
+  }
+
+  .navbar {
+    gap: 1em;
+    margin: 0 1%;
+  }
+
+  .navbar li {
+    font-size: 1.1rem;
+  }
+
+  .landing-page {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25%;
+    padding: 1%;
+  }
+
+  .card {
+    width: 320px;
+    margin: 2%;
+    padding: 3%;
+  }
+
+  .card-heading {
+    margin: 3% 0 1% 0;
+  }
+
+  .likes {
+    margin-bottom: 5%;
+  }
+
+  .popUp-bttn {
+    font-size: 0.9rem;
+    margin: 2% auto;
+    padding: 4% 15%;
+  }
+
+  .footer {
+    padding: 5% 5%;
+  }
+
+  .footer-text {
+    font-size: 0.8rem;
+  }
 }
