@@ -18,7 +18,6 @@ const seeComments = () => {
 };
 
 const render = async () => {
-  await getLikes();
   const items = getArrayItems();
   home.innerHTML = `Home (${itemCounter(items)})`;
   container.innerHTML = '';
