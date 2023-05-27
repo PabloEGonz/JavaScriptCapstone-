@@ -5,7 +5,7 @@ import commentCounter from './commentsCounter.js';
 
 const pageBody = document.getElementById('body');
 
-const popUpRender = async (index) => {
+const popUpRender = async (index, id) => {
   const elem = arrayObj[index];
   const counter = await commentCounter(index);
   document.body.classList.add('disable-scroll');
@@ -57,7 +57,7 @@ const popUpRender = async (index) => {
   const itemIndex = index;
 
   newCommentForm(itemIndex, nameInput, commentInput, submitBttn);
-  await getComments(index);
+  await getComments(id);
 };
 
 export default popUpRender;

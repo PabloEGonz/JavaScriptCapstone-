@@ -10,9 +10,9 @@ const home = document.querySelector('#home-link');
 
 const seeComments = () => {
   const buttons = Array.from(document.getElementsByClassName('popUp-bttn'));
-  buttons.forEach((button, index) => {
+  buttons.forEach((button, i) => {
     button.addEventListener('click', () => {
-      popUpRender(index);
+      popUpRender(i, button.id);
     });
   });
 };

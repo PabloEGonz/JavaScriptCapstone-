@@ -4,7 +4,7 @@ const APIURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneA
 
 const getComments = async (i) => {
   const comentContainer = document.querySelector('.viewComments');
-  const obj = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/YNGIAvmuzfqw2IIpg60K/comments?item_id=item${i}`);
+  const obj = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/YNGIAvmuzfqw2IIpg60K/comments?item_id=${i}`);
   const response = await obj.json();
   comentContainer.innerHTML = '';
   if (Array.isArray(response)) {
