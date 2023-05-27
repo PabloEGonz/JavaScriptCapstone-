@@ -23,6 +23,9 @@ body {
       rgba(121, 121, 121, 0.716),
       rgba(37, 37, 37, 0.97)
     );
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .disable-scroll {
@@ -173,6 +176,7 @@ a {
 }
 
 .footer {
+  margin-top: auto !important;
   padding: 4% 11%;
   background-color: #000;
 }
