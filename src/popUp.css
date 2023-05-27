@@ -128,12 +128,112 @@ input:focus {
 }
 
 #errorMsg {
+  position: absolute;
+  top: 66%;
+  left: 25%;
   font-size: 0.9rem;
   color: rgb(255, 0, 0);
+  text-shadow: 5px 5px 10px black;
 }
 
 .addCommentBttn:hover {
   background-color: #f1c40f;
   color: black;
   font-weight: 550;
+}
+
+@media screen and (max-width: 600px) {
+  .popUp-card {
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(18px);
+  }
+
+  .popUp-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4em;
+    width: 90%;
+    padding: 1%;
+    height: 95vh;
+  }
+  .box1 img {
+    margin-top: 5%;
+    height: 95%;
+    border-radius: 5px;
+  }
+
+  .xBttn {
+    width: 30px;
+    top: 6px;
+    right: 6px;
+  }
+
+  .box2 {
+    gap: 0.2em;
+    padding: 3%;
+    margin: 1%;
+  }
+
+  .serieTitle {
+    font-size: 1.2em;
+  }
+
+  .box2 p,
+  i,
+  b {
+    display: none;
+  }
+
+  .serieData {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.3em;
+  }
+
+  .box3 {
+    order: 1;
+  }
+
+  .box4 {
+    width: 90%;
+  }
+
+  .newCommentForm {
+    margin-top: 0.2em;
+    width: 100%;
+  }
+
+  .newCommentForm input {
+    padding: 2% 4%;
+    font-size: 1rem;
+  }
+
+  #Comment {
+    height: 60px;
+    font-size: 0.9;
+  }
+
+  .addCommentBttn {
+    font-size: 1rem;
+    padding: 0.6rem 1.7em;
+    border: solid 1px #fff;
+  }
+
+  #errorMsg {
+    position: absolute;
+    top: 66%;
+    left: 25%;
+    font-size: 0.9rem;
+    color: rgb(255, 0, 0);
+    text-shadow: 5px 5px 10px black;
+  }
 }
