@@ -7,7 +7,7 @@ const pageBody = document.getElementById('body');
 
 const popUpRender = async (index, id) => {
   const elem = arrayObj[index];
-  const counter = await commentCounter(index);
+  const counter = commentCounter(index);
   document.body.classList.add('disable-scroll');
   const card = document.createElement('div');
   card.style.backgroundImage = `url(${elem.image.medium})`;
@@ -51,12 +51,10 @@ const popUpRender = async (index, id) => {
     pageBody.removeChild(card);
   });
 
-  const nameInput = document.getElementById('Name');
-  const commentInput = document.getElementById('Comment');
-  const submitBttn = document.querySelector('.addCommentBttn');
-  const itemIndex = index;
 
-  newCommentForm(itemIndex, nameInput, commentInput, submitBttn);
+  const submitBttn = document.querySelector('.addCommentBttn');
+
+  newCommentForm(id, submitBttn);
   await getComments(id);
 };
 

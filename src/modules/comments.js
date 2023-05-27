@@ -17,29 +17,25 @@ const getComments = async (i) => {
   } else {
     comentContainer.textContent = 'No comments yet, be the first one to comment!';
   }
-  const counter = await commentCounter(i);
+  const counter = commentCounter(response);
   const countUpdate = document.querySelector('.commentTitle');
   countUpdate.innerHTML = `Comments (${counter})`;
 };
 
-const POSTComment = async (id, user, comments) => {
-  const commentObj = {
-    item_id: `item${id}`,
-    username: user,
-    comment: comments,
-  };
+const POSTComment = async (obj) => {
   await fetch(APIURL,
     {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(commentObj),
+      body: JSON.stringify(obj),
     });
-  await getComments(id);
 };
 
-const newCommentForm = (itemIndex, nameInput, commentInput, submitBttn) => {
+const newCommentForm = (id, submitBttn) => {
+  const nameInput = document.getElementById('Name');
+  const commentInput = document.getElementById('Comment');
   const empytField = document.getElementById('errorMsg');
   submitBttn.addEventListener('click', async (e) => {
     e.preventDefault();
@@ -49,9 +45,15 @@ const newCommentForm = (itemIndex, nameInput, commentInput, submitBttn) => {
         empytField.textContent = '';
       }, 3000);
     } else {
-      await POSTComment(itemIndex, nameInput.value, commentInput.value);
+      const commentObj = {
+        item_id: `${id}`,
+        username: nameInput.value,
+        comment: commentInput.value,
+      };
+      await POSTComment(commentObj);
       nameInput.value = '';
       commentInput.value = '';
+      await getComments(id);
     }
   });
 };
