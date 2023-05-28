@@ -24,9 +24,8 @@
   justify-items: center;
   gap: 0.7em;
   width: 70%;
-  padding: 2%;
+  padding: 1% 2%;
   min-height: 90vh;
-  overflow-y: auto;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
   position: relative;
@@ -88,6 +87,32 @@ b {
 .viewComments > * {
   font-size: 0.8rem;
   margin-top: 5%;
+}
+
+.viewComments {
+  border-radius: 5px;
+  margin-top: 2%;
+  padding-right: 1%;
+  overflow-y: auto;
+  max-height: 140px;
+  --sb-track-color: #fff;
+  --sb-thumb-color: #484949;
+  --sb-size: 3px;
+  scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+}
+
+.viewComments::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+.viewComments::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 15px;
+}
+
+.viewComments::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 30px;
 }
 
 .box4 h4 {
@@ -201,6 +226,33 @@ input:focus {
 
   .box3 {
     order: 1;
+    width: 95%;
+  }
+
+  .viewComments {
+    border-radius: 5px;
+    margin-top: 2%;
+    padding-right: 1%;
+    overflow-y: auto;
+    max-height: 100px;
+    --sb-track-color: #fff;
+    --sb-thumb-color: #484949;
+    --sb-size: 3px;
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+
+  .viewComments::-webkit-scrollbar {
+    width: var(--sb-size);
+  }
+
+  .viewComments::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 15px;
+  }
+
+  .viewComments::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 30px;
   }
 
   .box4 {
