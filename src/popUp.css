@@ -167,12 +167,6 @@ input:focus {
   text-shadow: 5px 5px 10px black;
 }
 
-.addCommentBttn:hover {
-  background-color: #f1c40f;
-  color: black;
-  font-weight: 550;
-}
-
 @media screen and (max-width: 600px) {
   .popUp-section {
     display: flex;
@@ -185,7 +179,7 @@ input:focus {
   }
 
   .box1 {
-    height: 35%;
+    height: 30%;
     margin-top: 5%;
   }
 
@@ -206,7 +200,7 @@ input:focus {
   }
 
   .serieTitle {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .box2 p,
@@ -225,7 +219,7 @@ input:focus {
   }
 
   .box3 h3 {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .viewComments {
@@ -255,13 +249,21 @@ input:focus {
   }
 
   .addCommentBttn {
-    font-size: 1rem;
-    padding: 0.6rem 1.7em;
+    font-size: 0.9rem;
+    padding: 0.5rem 1.4em;
     border: solid 1px #fff;
   }
 
   #errorMsg {
     top: 66%;
     left: 25%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .addCommentBttn:hover {
+    background-color: #f1c40f;
+    color: black;
+    font-weight: 550;
   }
 }
