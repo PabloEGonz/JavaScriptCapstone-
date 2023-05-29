@@ -1,7 +1,7 @@
 import heart from '../img/star.png';
 import { arrayObj } from './getSeries.js';
 import popUpRender from './popUp.js';
-import { getArrayItems, getLikes } from './involAPI.js';
+import { getArrayItems } from './involAPI.js';
 import { likes } from './updateLikes.js';
 import itemCounter from './itemsCounter.js';
 
@@ -14,7 +14,7 @@ const seeComments = () => {
     button.addEventListener('click', () => {
       popUpRender(i, button.id);
     });
-  });
+  });2
 };
 
 const render = async () => {

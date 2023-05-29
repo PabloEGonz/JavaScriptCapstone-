@@ -5,9 +5,8 @@ import commentCounter from './commentsCounter.js';
 
 const pageBody = document.getElementById('body');
 
-const popUpRender = async (index, id) => {
-  const elem = arrayObj[index];
-  const counter = commentCounter(index);
+const popUpRender = async (i, id) => {
+  const elem = arrayObj[i];
   document.body.classList.add('disable-scroll');
   const card = document.createElement('div');
   card.style.backgroundImage = `url(${elem.image.medium})`;
@@ -29,7 +28,7 @@ const popUpRender = async (index, id) => {
           <p class="SerieResume">${elem.summary}</p>
         </div>
         <div class="box3">
-          <h3 class="commentTitle">Comments (${counter})</h3>
+          <h3 class="commentTitle">Comments (0)</h3>
           <div class="viewComments"></div>
         </div>
         <div class="box4">
@@ -44,7 +43,7 @@ const popUpRender = async (index, id) => {
     </section>
     `;
   pageBody.appendChild(card);
-
+  await getComments(i);
   const close = document.querySelector('.xBttn');
   close.addEventListener('click', () => {
     document.body.classList.remove('disable-scroll');
