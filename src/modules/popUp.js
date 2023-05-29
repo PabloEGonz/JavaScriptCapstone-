@@ -14,7 +14,7 @@ const popUpRender = async (i, id) => {
     <section class="popUp-section grid">
     <img src="${closePopUp}" alt="X button" class="xBttn">
         <div class="box1">
-          <img src="${elem.image.medium}" alt="Serie image nro.1" class="serieImg">
+          <img src="${elem.image.medium}" alt="Picture of ${elem.name} class="serieImg">
         </div>
         <div class="box2 flex">
           <h2 class="serieTitle">${elem.name}</h2>
