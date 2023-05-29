@@ -14,7 +14,7 @@ const seeComments = () => {
     button.addEventListener('click', () => {
       popUpRender(i, button.id);
     });
-  });2
+  });
 };
 
 const render = async () => {

@@ -24,7 +24,7 @@
   gap: 0.7em;
   width: 70%;
   padding: 1% 2%;
-  min-height: 90vh;
+  height: 90vh;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
   position: relative;
@@ -72,8 +72,13 @@ b {
 }
 
 .serieData li {
+  font-size: 0.9rem;
+}
+
+.serieData li strong {
   font-family: "Ubuntu", sans-serif;
   font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .box3 h3 {
@@ -94,9 +99,11 @@ b {
   padding-right: 1%;
   overflow-y: auto;
   max-height: 140px;
+
   --sb-track-color: #fff;
   --sb-thumb-color: #484949;
   --sb-size: 3px;
+
   scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
 }
 
@@ -167,20 +174,6 @@ input:focus {
 }
 
 @media screen and (max-width: 600px) {
-  .popUp-card {
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    background-repeat: no-repeat;
-    background-size: cover;
-    backdrop-filter: blur(18px);
-  }
-
   .popUp-section {
     display: flex;
     flex-direction: column;
@@ -188,16 +181,20 @@ input:focus {
     gap: 0.4em;
     width: 90%;
     padding: 1%;
-    height: 95vh;
+    height: 90vh;
   }
-  .box1 img {
+
+  .box1 {
+    height: 35%;
     margin-top: 5%;
-    height: 95%;
+  }
+
+  .box1 img {
+    height: 100%;
     border-radius: 5px;
   }
 
   .xBttn {
-    width: 30px;
     top: 6px;
     right: 6px;
   }
@@ -209,7 +206,7 @@ input:focus {
   }
 
   .serieTitle {
-    font-size: 1.2em;
+    font-size: 1.2rem;
   }
 
   .box2 p,
@@ -218,9 +215,8 @@ input:focus {
     display: none;
   }
 
-  .serieData {
-    grid-template-columns: 1fr 1fr;
-    gap: 0.3em;
+  .serieData li {
+    font-size: 0.8rem;
   }
 
   .box3 {
@@ -228,34 +224,20 @@ input:focus {
     width: 95%;
   }
 
+  .box3 h3 {
+    font-size: 1.1rem;
+  }
+
   .viewComments {
-    border-radius: 5px;
-    margin-top: 2%;
-    padding-right: 1%;
-    overflow-y: auto;
     max-height: 100px;
-    --sb-track-color: #fff;
-    --sb-thumb-color: #484949;
-    --sb-size: 3px;
-    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
-  }
-
-  .viewComments::-webkit-scrollbar {
-    width: var(--sb-size);
-  }
-
-  .viewComments::-webkit-scrollbar-track {
-    background: var(--sb-track-color);
-    border-radius: 15px;
-  }
-
-  .viewComments::-webkit-scrollbar-thumb {
-    background: var(--sb-thumb-color);
-    border-radius: 30px;
   }
 
   .box4 {
     width: 90%;
+  }
+
+  .box4 h4 {
+    font-size: 1.2rem;
   }
 
   .newCommentForm {
@@ -269,8 +251,7 @@ input:focus {
   }
 
   #Comment {
-    height: 60px;
-    font-size: 0.9;
+    font-size: 0.9rem;
   }
 
   .addCommentBttn {
@@ -280,11 +261,7 @@ input:focus {
   }
 
   #errorMsg {
-    position: absolute;
     top: 66%;
     left: 25%;
-    font-size: 0.9rem;
-    color: rgb(255, 0, 0);
-    text-shadow: 5px 5px 10px black;
   }
 }

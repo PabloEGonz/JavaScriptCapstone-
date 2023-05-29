@@ -1,4 +1,5 @@
-import { getLikes } from "./involAPI";
+import { getLikes } from './involAPI.js';
+
 const arrayObj = [];
 
 const getSeries = async (file) => {

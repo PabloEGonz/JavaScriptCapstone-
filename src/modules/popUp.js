@@ -1,7 +1,6 @@
 import closePopUp from '../img/x.png';
 import { arrayObj } from './getSeries.js';
 import { newCommentForm, getComments } from './comments.js';
-import commentCounter from './commentsCounter.js';
 
 const pageBody = document.getElementById('body');
 
@@ -20,10 +19,10 @@ const popUpRender = async (i, id) => {
         <div class="box2 flex">
           <h2 class="serieTitle">${elem.name}</h2>
           <ul class="serieData grid">
-            <li>Rating: ${elem.rating.average}/10</li>
-            <li>Status: ${elem.status}</li>
-            <li>Language: ${elem.language}</li>
-            <li>Genres: ${elem.genres}</li>
+            <li><strong>Rating:</strong> ${elem.rating.average}/10</li>
+            <li><strong>Status:</strong> ${elem.status}</li>
+            <li><strong>Language:</strong> ${elem.language}</li>
+            <li><strong>Genres:</strong> ${elem.genres}</li>
           </ul>
           <p class="SerieResume">${elem.summary}</p>
         </div>
@@ -49,7 +48,6 @@ const popUpRender = async (i, id) => {
     document.body.classList.remove('disable-scroll');
     pageBody.removeChild(card);
   });
-
 
   const submitBttn = document.querySelector('.addCommentBttn');
 
