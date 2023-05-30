@@ -22,7 +22,7 @@ const popUpRender = async (i, id) => {
             <li><strong>Rating:</strong> ${elem.rating.average}/10</li>
             <li><strong>Status:</strong> ${elem.status}</li>
             <li><strong>Language:</strong> ${elem.language}</li>
-            <li><strong>Genres:</strong> ${elem.genres}</li>
+            <li><strong>Genres:</strong> ${elem.genres.join(', ')}</li>
           </ul>
           <p class="SerieResume">${elem.summary}</p>
         </div>
