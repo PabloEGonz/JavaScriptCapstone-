@@ -42,7 +42,7 @@ const popUpRender = async (i, id) => {
     </section>
     `;
   pageBody.appendChild(card);
-  await getComments(i);
+  await getComments(id);
   const close = document.querySelector('.xBttn');
   close.addEventListener('click', () => {
     document.body.classList.remove('disable-scroll');
@@ -52,7 +52,6 @@ const popUpRender = async (i, id) => {
   const submitBttn = document.querySelector('.addCommentBttn');
 
   newCommentForm(id, submitBttn);
-  await getComments(id);
 };
 
 export default popUpRender;
