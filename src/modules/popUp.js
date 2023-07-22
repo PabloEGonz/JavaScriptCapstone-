@@ -34,8 +34,8 @@ const popUpRender = async (i, id) => {
           <h4 class="commentSubtitle">Add a comment</h4>
           <form class="newCommentForm flex">
             <span id="errorMsg"></span>
-            <input type="text" name="name" id="Name" placeholder="Your name" required>
-            <input type="text" name="addcomment" id="Comment" placeholder="Your insights" required>
+            <input type="text" name="name" id="Name" placeholder="Your name" maxlength="25" required>
+            <input type="text" name="addcomment" id="Comment" placeholder="Your insights" maxlength="55" required>
             <button type="submit" class="addCommentBttn">Comment</button>
           </form>
         </div>
